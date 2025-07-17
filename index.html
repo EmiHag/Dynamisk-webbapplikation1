@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+<title>JavaScript Basics</title>
+
+<!-- custom CSS -->
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,600" rel="stylesheet">
+<style type="text/css">
+html { font-family: 'Ubuntu', sans-serif; display: block; margin: 0px auto;color: #333333;}
+#container section, header {
+width: 97%;
+border: 1px solid #888;
+padding: 10px;
+border-radius: 5px;
+}
+.task_box {
+text-align: left;
+width: 47%;
+display: inline-block;
+border: 1px solid #888;
+padding: 10px;
+margin: 5px;
+border-radius: 5px;
+vertical-align: bottom;
+}
+fieldset {
+border-radius: 5px;
+background: #efefef;
+border: 0;
+}
+header, section {
+margin: 0.5em;
+}
+</style>
+
+
+</head>
+<body>
+ 
+	<div id="container">
+		<header>
+			<h1>Grundl&auml;ggande JavaScript</h1>
+			<article>
+				<h2>Om uppgiften</h2>
+				<p>Inl&auml;mningsuppgift 1 best&aring;r av att skriva funktionalitet i form av funktioner/procedurer till en f&auml;rdig mallsida.</p>
+				<p>Allm&auml;nt kriterium f&ouml;r samtliga inl&auml;mningsuppgifter: Koden ska vara l&auml;ttl&auml;slig, dvs ha kommentarer, bra namn p&aring; variabler, funktionsnamn etc. och ha en bra indentering.</p>
+				<p>Denna HTML-sida best&aring;r av en serie formul&auml;r med knappar kopplade till h&auml;ndelser. Varje knapp i uppgift 1-6 anropar en funktion i script.js. Uppgiften g&aring;r ut p&aring; att f&auml;rdigst&auml;lla funktionerna s&aring; att de utf&ouml;r vad som f&ouml;rv&auml;ntas av dem. F&ouml;r uppgift 7 och 8 ska du skapa funktioner som anropas och genomf&ouml;r det som st&aring; i rutan.</p>
+				<p>Ut&ouml;ver dessa uppgifter finns begrepp att f&ouml;rklara och reda ut. Dessa f&ouml;rklaringar och redog&ouml;relser skrivs i .js-filen.</p>
+				<h3>G-kriterier</h3>
+				<ul>
+					<li>Minst 8 po&auml;ng p&aring; del 1</li>
+					<li>Minst 4 funktioner av 1-6 fungerar som t&auml;nkt</li>
+					<li>Minst 1 funktion av 7-8 fungerar som t&auml;nkt</li>
+				</ul>
+				<h3>VG-kriterier</h3>
+				<ul>
+					<li>Minst 12 po&auml;ng p&aring; del 1</li>
+					<li>Samtliga funktioner 1-8 fungerar som t&auml;nkt</li>
+					<li>Minst 2 av 4 VG-till&auml;gg i uppgifterna 1-4 &auml;r implementerade</li>
+				</ul>				
+			</article>
+		</header>
+		<section>		
+			<article id="text">
+				<h2>Texten</h2>
+				<p>When I was walking with my two year old daughter the other day we saw a robotic mower, a fairly common sight these days, and I could not resist thinking about <span>AI</span>. What if robotic mowers got the upper hand of the technological development and were the first to gain artificial general intelligence? I was thinking about a thought experiment named <a href="https://wiki.lesswrong.com/wiki/Paperclip_maximizer" rel="noreferrer">The paperclip maximiser</a>, once introduced by Nick Bostr&ouml;m. Basically, the <span>AI</span> would develop itself so to optimise itself in reaching its goal, which would be manufacturing paperclips. If there was no termination condition it would just go on making paperclips, perhaps creating machines creating paperclips, and when resources of the planet were exhausted, attempt to make use of other celestial bodies (it would of course have to find a way to reach them, and preferrably before resources were exhausted, but we suppose that we are talking about what by then would be a very intelligent machine or piece of software).</p>
+				<p>What would the robotic mower do? Would it be satisfied with finishing the lawn for now, or would it attempt to find more grass to cut? Would it start to grow grass in other areas and create more robotic mowers, perhaps mowers receiving energy from the grass that they cut? And if we turn our attention to self driving cars, would they try to optimise the time for a trip by creating shorter roads from A to B? Well, it turned out to be a silly thought experiment in the end, but termination conditions remain important.</p>
+				<p>Sometimes, scientific breakthroughs happen because of sharper senses and more computational power. <span>AI</span> can provide that. Scientific breakthroughs might also shift perspectives, and I expect an <span>AI</span> to at least shift its perspective, but that it would still be recognisable. I suppose that a termination condition requirement is partly from programming, a human activity which creates <span>AI</span>, which then might start programming. Our thoughts about <span>AI</span> say something about ourselves. We think that things we program need a good set of rules and a clearly defined termination condition because that is (partly) how our applications work following the programming languages and machines we have developed.</p>
+		
+			</article>
+		</section>		
+		<section>
+			<div class="task_box">
+				<h2>1. Byt ut text</h2>
+				<p>I HTML-elementet #text ovan sidan finns textstr&auml;ngen <em>AI</em> uppm&auml;rkt med span-element. Genom att loopa igenom dessa element ska deras inneh&aring;ll bytas ut mot den textstr&auml;ng som matas in i formul&auml;ret n&auml;r knappen klickas p&aring;.</p>
+				
+				<p>VG: Ut&ouml;ka funktionen s&aring; att &auml;ven ett ord som inte finns i span-element byts ut, f&ouml;rslagsvis <em>robotic mower</em>.</p>
+				<form>
+					<fieldset>
+						<input type="text" id="input_text" value=""/>
+						<input onclick="swap_text()" value="Byt ut text" type="button"/>
+					</fieldset>
+				</form>				
+			</div>
+			<div class="task_box">
+				<h2>2. Byt ut f&auml;rg</h2>				
+				<p>Bakgrund och textf&auml;rg p&aring; samtliga boxar med class="task_box" &auml;ndras dynamiskt vid tryck p&aring; knappen. F&ouml;r G kan f&auml;rger h&aring;rdkodas i funktionen. F&ouml;r VG ska f&auml;rg &auml;ndras till det som anges i formul&auml;ret.</p>
+				<p>VG: anv&auml;nd formul&auml;ret f&ouml;r att skicka in f&auml;rger.</p>
+				<form>
+					<fieldset>
+						<label for="font_color">Textf&auml;rg</label><br/>
+						<input type="text" id="font_color" value=""/><br/>
+						<label for="background_color">Bakgrundsf&auml;rg</label><br/>
+						<input type="text" id="background_color" value=""/><br/>
+						<input onclick="swap_colors()" value="Byt ut f&auml;rger" type="button"/>
+					</fieldset>
+				</form>					
+			</div>
+			<div class="task_box">
+				<h2>3. Ber&auml;kna</h2>
+				<p>I denna uppgift ska anv&auml;ndaren fylla i tre textrutor med heltal (#number_1, #number_2 och #number_3), v&auml;lja r&auml;knes&auml;tt (#arithmetic_operator) och trycka p&aring; knappen. Funktionen <code>calculate()</code> ska plocka upp de tre v&auml;rdena, det valda r&auml;knes&auml;ttet och kontrollera att resultatet (#number_3) st&auml;mmer. Skriv ut resultatet av kontrollen i #result.</p>
+				<p>G: minst ett av r&auml;knes&auml;tten plus och minus fungerar. VG: alla r&auml;knes&auml;tt fungerar.</p>
+				<form>
+					<fieldset>
+						<input type="text" id="number_1"/>
+						<select id="arithmetic_operator">
+							<option value="a">+</option>
+							<option value="s">-</option>
+							<option value="m">*</option>
+							<option value="d">/</option>						  
+						<input type="text" id="number_2"/> = 
+						<input type="text" id="number_3"/>
+						<span id="result"></span>
+						<input onclick="calculate()" value="Ber&auml;kna" type="button"/>
+					</fieldset>
+				</form>		
+			
+			</div>
+			<div class="task_box">
+				<h2>4. R&auml;kna tecken och ord</h2>
+				<p>I denna uppgift ska anv&auml;ndaren skriva in text och vid h&auml;ndelsen onkeyup ska en funktion anropas som r&auml;knar ut antal tecken textrutan #text_count.</p>
+				
+				<p>VG: bygg ut funktionen s&aring; att den ocks&aring; r&auml;knar ut antal ord. Hint: f&ouml;r att r&auml;kna ord kan du r&auml;kna mellanslag.</p>
+
+				<p>ID f&ouml;r &lt;span&gt;-elementen &auml;r #char_count och #word_count.</p>
+				<form>
+					<fieldset>
+						<textarea id="text_count" onkeyup="count_chars_and_words()"></textarea> 
+						<p>Antal tecken: <span id="char_count"></span><br/>
+						Antal ord: <span id="word_count"></span></p>
+					</fieldset>
+				</form>							
+			</div>
+			<div class="task_box">
+				<h2>5. Konvertera kommaseparerad text till ul-lista</h2>
+				<p>I textf&auml;ltet #csv_text nedan ska en kommaseparerad text skrivas in. Vid tryck p&aring; knappen anropas en funktion som delar upp texten i dess best&aring;ndsdelar och skriver ut en ul-lista till elementet #converted_list.</p>
+				<form>
+					<fieldset>
+						<textarea id="csv_text" onkeyup=""></textarea> 
+						<input onclick="convert_to_list()" value="Konvertera" type="button"/>
+					</fieldset>					
+				</form>	
+				<div id="converted_list">
+				
+				</div>
+			</div>
+			<div class="task_box">
+				<h2>6. Konvertera</h2>
+				<p>Formul&auml;ret nedan inneh&aring;ller en textbox #to_convert och en select-lista #unit med enheter. Uppgiften g&aring;r ut p&aring; att skriva en konverterare som plockar upp v&auml;rdet av respektive element och konverterar till l&auml;mplig enhet, som sedan skrivs ut till #converted. Anv&auml;nd en switch f&ouml;r att testa enhet och returnera r&auml;tt v&auml;rde och kom ih&aring;g att testa v&auml;rdet f&ouml;rst.</p>				
+
+				<form>
+					<fieldset>
+						V&auml;lj v&auml;rde att konvertera: <input type="text" id="to_convert" value="" size="5"/><br/>
+						V&auml;lj enhet:  
+						<select id="unit">
+							<option value="F">Fahrenheit till Celcius</option>
+							<option value="cup">cup till liter</option>
+							<option value="lb">lb/pound till kg</option>
+						</select> 						
+						<input onclick="converter()" value="Konvertera" type="button"/> 
+						<input type="text" id="converted" value="[resultat här]" size="15"/>
+					</fieldset>
+				</form>
+			
+			</div>
+			
+			<div class="task_box">
+				<h2>7. &Aring;tta frukter</h2>
+				<p>Vid klick p&aring; knappen ska en funktion anropas. Denna funktion ska skriva ut en lista med frukterna i #fruits. Du beh&ouml;ver koppla knappen till ditt valda funktionsnamn.</p>				
+
+				<form>
+					<fieldset>	
+						<input onclick="output_fruitlist()" value="Generera fruktlistan" type="button"/> 
+					</fieldset>
+				</form>
+				<div id="fruits">
+				
+				</div>
+			
+			</div>
+			<div class="task_box">
+				<h2>8. Byt ut rubriker</h2>
+				<p>Vid klick p&aring; knappen ska en funktion anropas. Denna funktion ska byta ut alla tio h2-rubriker till valfria text. Anv&auml;nd en array f&ouml;r att g&ouml;ra varje rubrik unik.</p>				
+
+				<form>
+					<fieldset>
+						<input onclick="change_headings()" value="Byt ut rubrikerna" type="button"/> 
+					</fieldset>
+				</form>
+			
+			</div>			
+		</section>
+		
+		<footer>
+
+		</footer>
+	</div>
+ <script src="scripts.js">
+</script> 
+</body>
+</html>
+
