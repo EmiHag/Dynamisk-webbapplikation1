@@ -169,7 +169,7 @@ function converter() {
 
 // Åtta frukter: Skapa en array med 8 strängvärden (8 fruktnamn). Generera en HTML-lista (ol eller ul)
 function output_fruitlist() {
-    var fruits = ["Äpple", "Banan", "Apelsin", "Lingon", "Blåbär", "Hjortron", "Hallon", "Jordgubbe"]; // En array med olika frukter
+    var fruits = ["Äpple", "Banan", "Apelsin", "Lingon", "Blåbär", "Hjortron", "Hallon", "Jordgubb"]; // En array med olika frukter
     var fruitList = "<ul>"; // En sträng för att bygga upp en HTML-lista
 
     for (var i = 0; i < fruits.length; i++) {
